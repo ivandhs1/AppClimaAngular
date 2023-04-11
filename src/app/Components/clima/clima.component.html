@@ -1,0 +1,34 @@
+<div class="box"  [ngClass]="{'day': is_day === true, 'night' : is_day === false }">
+    <h2 class="title">El Clima</h2>
+    <section class="sectOne">
+        <h1 class="temp">{{info.grados}}&#176;</h1>
+        <div class="boxCountry">
+            <h1 class="nameCountry">{{info.pais}}</h1>
+            <small>
+                <span class="hour">{{info.hora}}</span>
+                -
+                <span class="date">{{info.fecha}}</span>
+            </small>
+        </div>
+        <div class="boxClima">
+            <img src="{{info.imgClima}}" alt="" class="imgClima">
+            <span class="nameClima">{{info.nameClima}}</span>
+        </div>
+    </section>
+
+    <section class="sectTwo">
+        <ul>
+            <li (click)="search('United States')">Estados Unidos</li>
+            <li (click)="search('Mexico')">Mexico</li>
+            <li (click)="search('Colombia')">Colombia</li>
+            <li (click)="search('Brazil')">Brasil</li>
+            <li (click)="search('Argentina')">Argentina</li>
+        </ul>
+        <div class="boxSearch">
+            <input #input class="inputSearch" type="text">
+            <button class="btnSearch" (click)="search(input.value)" [ngClass]="{'btnDay': is_day === true, 'btnNight' : is_day === false }">
+                <img src="../../../assets/images/lupa.png" alt="">
+            </button>
+        </div>
+    </section>
+</div>
