@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class ClimaService {
 
   API_KEY = '9812b8d4e5714d0cabc04348230904'
-  URL = 'http://api.weatherapi.com/v1/current.json?key='
+  URL = 'https://api.weatherapi.com/v1/current.json?key='
 
   constructor(public httpC: HttpClient) { }
 
